@@ -134,6 +134,10 @@ def main():
     ## Tensorboard
     writer = SummaryWriter()
 
+    ## Create checkpoint path
+    if not os.path.exists("./checkpoint"):
+        os.makedirs("./checkpoint")
+
     ## Model Training
     if args.mode == 'train':
         model = model.train()
